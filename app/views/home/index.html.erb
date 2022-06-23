@@ -1,15 +1,14 @@
 <b>Home page</b>
+
 <div>
-<%= link_to "Log out", destroy_session_path(:user), :method => :delete %>
+<%# product#index %>
+<%= link_to "Search all products", product_index_path, :method => :get %>
+<%# product#show_own_products %>
+<%= link_to "My products", product_own_path, :method => :get %>
+<%# product#create %>
+<%= link_to "Create product", product_index_path, :method => :post %>
 </div>
 
-
 <div>
-<%= link_to "Search all products", destroy_session_path(:user), :method => :delete %>
-<%= link_to "My products", destroy_session_path(:user), :method => :delete %>
-<%= link_to "Create product", destroy_session_path(:user), :method => :delete %>
 <%= link_to "Log out", destroy_session_path(:user), :method => :delete %>
-
-
-
 </div>
