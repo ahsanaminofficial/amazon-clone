@@ -1,0 +1,6 @@
+<%= form_for :product, url: product_index_path , method: :post do |f| %>
+  Name: <%= f.text_field :name %><br />
+  Details : <%= f.text_field :details %><br />
+  
+  <%= f.submit %>
+<% end %>
