@@ -1,0 +1,20 @@
+<b>Cart</b>
+
+<% unless @products.blank?%>
+<% (Array @products).each do |product|%>
+<div>
+Name: <%=product[:name]%>
+<%# Details: <%=product.details %>
+
+<%= link_to 'Show', product_path(product[:id])%>
+<%= link_to 'Remove from Cart', cart_delete_path(product[:entry_id]), method: :post %>
+
+
+<%# <%= link_to 'Delete', product_path(product), method: :delete%>
+<%# <%= link_to 'Delete', product_path(product), method: :delete, :data => {:confirm => 'Are you sure?'}%>
+
+
+</div>
+
+<%end%>
+<%end%>

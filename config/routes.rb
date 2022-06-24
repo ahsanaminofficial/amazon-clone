@@ -7,5 +7,13 @@ Rails.application.routes.draw do
     resources :comment
   end
 
+
+  
+  get '/cart/' => "cart#index"
+  post '/cart/:product_id/add' => "cart#add", as: :cart_add
+  post '/cart/:id/del' => "cart#delete", as: :cart_delete
+
+  # resources :cart
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
