@@ -9,6 +9,7 @@ class ProductController < ApplicationController
 
     def show
         @product = Product.find(params[:id])
+        @comments = Comment.find_by(product_id: params[:id])
     end
 
     def edit

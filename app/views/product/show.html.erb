@@ -2,8 +2,23 @@
 Name: <%=@product.name%>
 Details: <%=@product.details%>
 
-<%= link_to 'Update', edit_product_path(@product), method: :get%>
-<%= link_to 'Delete', product_path(@product), method: :delete, :data => {:confirm => 'Are you sure?'}%>
+<%# <%= link_to 'Update', edit_product_path(@product), method: :get%>
+<%# <%= link_to 'Delete', product_path(@product), method: :delete, :data => {:confirm => 'Are you sure?'}%>
+
+
+<%@product.comments.each do |comment|%>
+
+<div>
+Text: <%= comment.text%>
+</div>
+
+<%end%>
+
+<%if @product.comments.empty? %>
+<div>
+nothing
+</div>
+<%end%>
 
 
 </div>
