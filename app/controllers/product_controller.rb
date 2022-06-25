@@ -1,6 +1,8 @@
 class ProductController < ApplicationController
     def index
-        @products = Product.where.not(user_id: current_user)
+        # @products = Product.where.not(user_id: current_user)
+        # byebug payoneer
+        @products = Product.search(params["search"])
     end
 
     def new

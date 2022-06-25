@@ -7,6 +7,7 @@ ruby '2.5.8'
 gem 'devise'
 # gem 'mysql2'
 gem 'thinking-sphinx'
+gem 'mysql2', '> 0.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.8'

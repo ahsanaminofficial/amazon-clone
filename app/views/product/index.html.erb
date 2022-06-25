@@ -1,3 +1,14 @@
+<%=form_tag( product_index_path, {:action => 'index', :controller => 'product',:method => :get})%>
+
+<div>
+<%# <b>Name</b> %>
+<%= text_field_tag "search", nil, size: 40 %>
+<input type="submit" value="Search">
+</div>
+
+</form_tag>
+
+
 <% @products.each do |product|%>
 <div>
 Name: <%=product.name%>
