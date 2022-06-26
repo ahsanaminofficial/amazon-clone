@@ -4,7 +4,13 @@
 <% (Array @products).each do |product|%>
 <div>
 Name: <%=product[:name]%>
-<%# Details: <%=product.details %>
+<%# Quantity: <%=product[:quantity] %>
+
+<form action=<%=cart_update_path(product[:entry_id])%> method="post">
+Quantity: <input type="text" id="quantity" name="quantity" placeholder=<%=product[:quantity]%> enabled=true size=1>
+<button type="submit">Update</button>
+
+</form>
 
 <%= link_to 'Show', product_path(product[:id])%>
 <%= link_to 'Remove from Cart', cart_delete_path(product[:entry_id]), method: :post %>
@@ -15,6 +21,9 @@ Name: <%=product[:name]%>
 
 
 </div>
+
+<br>
+<br>
 
 <%end%>
 <%end%>

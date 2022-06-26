@@ -32,7 +32,7 @@ class ProductController < ApplicationController
     end
 
     def create
-        data = params.require(:product).permit(:name, :details)
+        data = params.require(:product).permit(:name, :details, :price)
         @product = current_user.products.new(data)
 
         if @product.save

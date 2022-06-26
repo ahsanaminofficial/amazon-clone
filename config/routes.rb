@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/cart/' => "cart#index"
   post '/cart/:product_id/add' => "cart#add", as: :cart_add
   post '/cart/:id/del' => "cart#delete", as: :cart_delete
+  post '/cart/:id/update' => "cart#update", as: :cart_update
 
   # resources :cart
 
