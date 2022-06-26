@@ -1,0 +1,29 @@
+<%=form_tag( product_index_path, {:action => 'index', :controller => 'product',:method => :get})%>
+
+<div>
+<%# <b>Name</b> %>
+<%= text_field_tag "search", nil, size: 40 %>
+<input type="submit" value="Search">
+</div>
+
+</form_tag>
+
+
+<% @products.each do |product|%>
+<div>
+Name: <%=product.name%>
+Details: <%=product.details%>
+
+<%= link_to 'Show', product_path(product)%>
+<%= link_to 'Add Comment', new_product_comment_path(product), method: :get%>
+<%= link_to 'Add to Cart', cart_add_path(product), method: :post%>
+
+
+
+<%# <%= link_to 'Delete', product_path(product), method: :delete%>
+<%# <%= link_to 'Delete', product_path(product), method: :delete, :data => {:confirm => 'Are you sure?'}%>
+
+
+</div>
+
+<%end%>

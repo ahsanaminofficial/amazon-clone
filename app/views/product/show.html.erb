@@ -1,0 +1,37 @@
+<div>
+Name: <%=@product.name%>
+Details: <%=@product.details%>
+
+<%# <%= link_to 'Update', edit_product_path(@product), method: :get%>
+<%# <%= link_to 'Delete', product_path(@product), method: :delete, :data => {:confirm => 'Are you sure?'}%>
+<div>
+
+
+<br>
+<b>Comments</b>
+<%@product.comments.each do |comment|%>
+<div>
+<%= comment.text%>
+
+
+<%if current_user.id == comment.user_id%>
+<%= link_to 'Update', edit_product_comment_path(@product, comment), method: :get%>
+<%= link_to 'Delete', product_comment_path(@product, comment), method: :delete, :data => {:confirm => 'Are you sure?'}%>
+<%end%>
+
+</div>
+<br>
+
+<%end%>
+
+<%if @product.comments.empty? %>
+<div>
+No comments!
+</div>
+<%end%>
+
+</div>
+
+
+</div>
+

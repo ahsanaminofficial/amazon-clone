@@ -1,0 +1,8 @@
+<%= form_for :comment, url: product_comment_path(params[:product_id], params[:id]) , method: :patch do |f| %>
+  Text: <%= f.text_field :text %><br />
+  
+  <%= f.submit %>
+<%# <%= submit_tag 'Add comment' %>
+
+<%# <%=product_comment_index_path(params[:product_id]) %>
+<% end %>

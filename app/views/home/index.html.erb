@@ -1,0 +1,18 @@
+<b>Home page</b>
+
+<div>
+<%# product#index %>
+<%= link_to "Search all products", product_index_path, :method => :get%>
+<%# %# <%= link_to "Search all products", products_path, :method => :get %>
+
+<%# product#show_own_products %>
+<%= link_to "My products", product_own_path, :method => :get %>
+<%# product#new %>
+<%= link_to "Create product", new_product_path, :method => :get %>
+<%= link_to "Shopping Cart", cart_path, :method => :get %>
+
+</div>
+
+<div>
+<%= link_to "Log out", destroy_session_path(:user), :method => :delete %>
+</div>

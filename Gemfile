@@ -4,6 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.8'
 
 # gem byebug
+gem 'devise'
+# gem 'mysql2'
+gem 'thinking-sphinx'
+gem 'mysql2', '> 0.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.8'
